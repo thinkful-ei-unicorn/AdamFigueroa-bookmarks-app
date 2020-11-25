@@ -1,0 +1,29 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#collapsedBookmark{
+    display: flex;
+    justify-content: center;
+    border: solid 2px black;
+}
+
+/* Star management */
+.starBar {
+    padding: 20px 20px 0px 20px;
+}
+.checked {
+    color: orange;
+}
