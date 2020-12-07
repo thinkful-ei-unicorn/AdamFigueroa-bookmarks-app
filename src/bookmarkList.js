@@ -5,7 +5,7 @@ import api from "./api";
 // ######################## Page Generation ########################
 
 const generateBookmarkTemplate = (bookmark) => {
-  console.log("oh hey, generateBookmarkTemplate is working...");
+  // console.log("oh hey, generateBookmarkTemplate is working...");
   return `
     <li class="newBM" data-item-id="${bookmark.id}">
       <div class="bmTitleBox">
@@ -27,7 +27,7 @@ const generateBookmarkTemplate = (bookmark) => {
 };
 
 const generateExpandedBookmarkTemplate = (bookmark) => {
-  console.log("oh hey, generateExpandedBookmarkTemplate is working...");
+  // console.log("oh hey, generateExpandedBookmarkTemplate is working...");
   return `
     <li class="newBM expanded" data-item-id="${bookmark.id}">
       <div class="bmEXTitleBox">
@@ -86,7 +86,7 @@ const generateBookmarkCreationMenu = () => {
 };
 
 const generateBookmarkString = function (bmList) {
-  console.log("generateBookmarkString", bmList);
+  // console.log("generateBookmarkString", bmList);
   // debugger
   let myBookmarks = bmList.map((bookmark) => {
     if (bookmark.expanded === true) {
@@ -97,7 +97,7 @@ const generateBookmarkString = function (bmList) {
   });
 
   myBookmarks.join("");
-  console.log(myBookmarks);
+  // console.log(myBookmarks);
   // debugger
   return myBookmarks;
 };
@@ -114,7 +114,7 @@ const generateFilteredBookmarkString = function (bmList) {
   });
 
   myBookmarks.join("");
-  console.log(myBookmarks);
+  // console.log(myBookmarks);
   // debugger
   return myBookmarks;
 };
@@ -156,19 +156,19 @@ const handleCloseError = () => {
 const render = function () {
   renderError();
   let bmList = [...store.bookmarkData];
-  console.log(bmList);
+  // console.log(bmList);
   // debugger
   if (store.adding === true) {
     $("#createBMDiv").html(generateBookmarkCreationMenu());
   } else if (store.filter === 0) {
     $("#createBMDiv").empty();
     const bookmarkString = generateBookmarkString(bmList);
-    console.log("oh hey" + bookmarkString);
+    // console.log("oh hey" + bookmarkString);
     // debugger
     $("#myBookmarks").html(bookmarkString);
   } else {
     const bookmarkString = generateFilteredBookmarkString(bmList);
-    console.log("oh hey it Expanded" + bookmarkString);
+    // console.log("oh hey it Expanded" + bookmarkString);
     // debugger
     $("#myBookmarks").html(bookmarkString);
   }
@@ -178,7 +178,7 @@ const render = function () {
 
 const handleAddBookmarkBtn = () => {
   $("#addBookmarkBtn").on("click", (event) => {
-    console.log("oh hey, someone clicked the Addbookmark button...");
+    // console.log("oh hey, someone clicked the Addbookmark button...");
     event.preventDefault();
     store.toggleAdding();
     render();
@@ -189,7 +189,7 @@ const handleCancelAddBookmark = () => {
   $("#mainPage").on("click", "#addBmCancel", function (event) {
     event.preventDefault();
     store.adding = false;
-    console.log(store.adding);
+    // console.log(store.adding);
     // debugger
     render();
   });
@@ -209,16 +209,16 @@ const handleCreateBookmark = function () {
     event.preventDefault();
 
     let serializedParams = $("#createBookmark").serializeJson();
-    console.log(serializedParams);
-    debugger;
+    // console.log(serializedParams);
+    // debugger;
     api
       .postBookmark(serializedParams)
       .then((newBookmark) => {
         store.addBookmark(newBookmark);
-        console.log(store.bookmarkData);
+        // console.log(store.bookmarkData);
         // debugger
         store.toggleAdding();
-        console.log(store.adding);
+        // console.log(store.adding);
         // debugger
 
         render();
@@ -234,7 +234,7 @@ const handleFilterSelection = function () {
   $("#filter").change((event) => {
     event.preventDefault();
     let filter = $(event.currentTarget).val();
-    console.log(filter);
+    // console.log(filter);
     // debugger
     store.setFilter(filter);
     render();
@@ -249,7 +249,7 @@ const handleExpandedView = function () {
   $("#mainPage").on("click", "#expand", function (event) {
     event.preventDefault();
     let id = getIDByElement(event.currentTarget);
-    console.log(id);
+    // console.log(id);
     // debugger
     let data = { expanded: true };
     store.findAndUpdate(id, data);
@@ -261,7 +261,7 @@ const handleMinimize = function () {
   $("#mainPage").on("click", "#minimize", function (event) {
     event.preventDefault();
     let id = getIDByElement(event.currentTarget);
-    console.log(id);
+    // console.log(id);
     // debugger
     let data = { expanded: false };
     store.findAndUpdate(id, data);

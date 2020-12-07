@@ -7,7 +7,7 @@ import bookmarkList from './bookmarkList';
 
 
 function main() {
-  console.log('DOM is loaded');
+  // console.log('DOM is loaded');
   bookmarkList.bindEventListeners();
   api.getBookmark()
   .then((bookmarks) => {
