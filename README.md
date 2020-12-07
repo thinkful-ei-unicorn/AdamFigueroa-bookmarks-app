@@ -1,22 +1,6 @@
 Pages link ""
 Gist link https://gist.github.com/adamfigueroa/455b8014965850d6cc2f159a6d665bfc
 
-Objective: By the end of this checkpoint, you will have built a client-side Bookmarking application that utilizes a RESTful Web API on the backend.
-
-Project Overview
-Using everything you've learned over the Fundamentals section of the course, you will build the frontend for an API-powered Bookmarks application that lets the user store and rate their custom web bookmarks.
-
-Grading
-To receive a passing grade, the project must:
-
-Fulfill every non-extension user story below
-Fulfill every non-extension technical requirement below
-For successful submission, you MUST:
-
-Push your final version to the gh-pages branch of your repo. Your repo should be inside the cohort's organization and named [yourname]-bookmarks-app.
-Add the live GH Pages link to the header of your repo.
-Create a README.md file that contains a full list of all user stories completed.
-Submit the repo URL at the bottom of this page.
 User Stories
 As a user:
 
