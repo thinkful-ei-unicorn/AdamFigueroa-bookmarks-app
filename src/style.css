@@ -202,3 +202,7 @@ ul {
     transition: 0.4s;
     cursor:pointer;
 }
+
+.filterLabel {
+    color: white;
+}

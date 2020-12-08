@@ -9,8 +9,8 @@ const generateBookmarkTemplate = (bookmark) => {
   return `
     <li class="newBM" data-item-id="${bookmark.id}">
       <div class="bmTitleBox">
-        <h3 id="bmTitle"><a href="${bookmark.url}" target="_blank">${
-        bookmark.title}</a></h3>
+        <h2 id="bmTitle"><a href="${bookmark.url}" target="_blank">${
+        bookmark.title}</a></h2>
       </div>
       <div class="starBar">
         <span class="${bookmark.rating >= 1 ? "fa fa-star checked" : "fa fa-star"}"></span>
@@ -31,8 +31,8 @@ const generateExpandedBookmarkTemplate = (bookmark) => {
   return `
     <li class="newBM expanded" data-item-id="${bookmark.id}">
       <div class="bmEXTitleBox">
-        <h3 id="bmEXTitle"><a href="${bookmark.url}" target="_blank">${
-        bookmark.title}</a></h3>
+        <h2 id="bmEXTitle"><a href="${bookmark.url}" target="_blank">${
+        bookmark.title}</a></h2>
       </div>
       <div class="starBar">
         <span class="${bookmark.rating >= 1 ? "fa fa-star checked" : "fa fa-star"}"></span>
