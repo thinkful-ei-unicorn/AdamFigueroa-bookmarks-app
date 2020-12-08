@@ -3,6 +3,7 @@ import bookmarkList from "./bookmarkList";
 const bookmarkData = [];
 let adding = false;
 let error = null;
+let errorMessage = ''
 let filter = 0;
 
 
@@ -43,6 +44,7 @@ export default {
     bookmarkData,
     adding,
     error,
+    errorMessage,
     filter,
     findById,
     addBookmark,

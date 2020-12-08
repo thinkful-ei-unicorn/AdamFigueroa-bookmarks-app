@@ -45,7 +45,12 @@ const listApiFetch = function (...args) {
   
         // otherwise, return the json as normal resolved Promise
         return data;
+      })
+      .catch((error) => {
+        store.setError(error.message);
+        renderError();
       });
+      
   };
 
 export default {

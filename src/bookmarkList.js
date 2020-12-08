@@ -4,27 +4,6 @@ import api from "./api";
 
 // ######################## Page Generation ########################
 
-// const generateBtnbar = () => {
-//   return `
-//   <div class="btnBarParent">
-//       <form id="btnBar">
-//         <input type="button" id="addBookmarkBtn" class="bouncy" value="Add New Bookmark">
-//         <label for='filter'>Filter:
-//         <select id="filter" name="filter">
-//           <option value="">All</option>
-//           <option value="1">1 Star</option>
-//           <option value="2">2 Star</option>
-//           <option value="3">3 Star</option>
-//           <option value="4">4 Star</option>
-//           <option value="5">5 Star</option>
-//         </select>
-//       </form>
-//     </div>
-//     <div id="createBMDiv"></div>
-//     <ul id="myBookmarks"></ul>
-//   `
-// }
-
 const generateBookmarkTemplate = (bookmark) => {
   // console.log("oh hey, generateBookmarkTemplate is working...");
   return `
@@ -153,7 +132,7 @@ const generateError = (message) => {
 
 const renderError = () => {
   if (store.error) {
-    const e = generateError(store.error);
+    const e = generateError(store.errorMessage);
     $(".error-container").html(e);
   } else {
     $(".error-container").empty();
@@ -177,8 +156,8 @@ const handleCloseError = () => {
 const render = function () {
   renderError();
   let bmList = [...store.bookmarkData];
-  // console.log(bmList);
-  // debugger
+  console.log(bmList);
+  debugger
   if (store.adding === true) {
     $("#mainPage").html(generateBookmarkCreationMenu());
   } else if (store.filter === 0) {
