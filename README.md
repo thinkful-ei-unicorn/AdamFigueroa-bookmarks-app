@@ -1,4 +1,4 @@
-Pages link: https://thinkful-ei-unicorn.github.io/AdamFigueroa-bookmarks-app/
+Pages link: https://thinkful-ei-unicorn.github.io/AdamFigueroa-bookmarks-app/docs
 
 Gist link https://gist.github.com/adamfigueroa/455b8014965850d6cc2f159a6d665bfc
 
