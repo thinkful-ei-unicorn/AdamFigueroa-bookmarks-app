@@ -56,15 +56,15 @@ const generateBookmarkCreationMenu = () => {
   return `
       <form id="createBookmark">
       <div class="error-container"></div>
-        <label for="title-Entry">Title:</label>
+        <label for="title">Title:</label>
           <input type="text" name="title" id="titleEntry" placeholder="Bookmark name" required>
         <br>
-        <label for="url-Entry">URL Link:
+        <label for="url">URL Link:
         <br>
           <input type="url" name="url" id="urlEntry" placeholder="www.google.com" required>
         </label>
         <br>
-        <label for="descEntry">Add a bookmark description (optional)
+        <label for="desc">Add a bookmark description (optional)
         <br>
         <textarea name="desc" id="desEntry" placeholder="Description here" default="null" cols="30" rows="10"></textarea>
         </label>
@@ -156,8 +156,8 @@ const handleCloseError = () => {
 const render = function () {
   renderError();
   let bmList = [...store.bookmarkData];
-  console.log(bmList);
-  debugger
+  // console.log(bmList);
+  // debugger
   if (store.adding === true) {
     $("#mainPage").html(generateBookmarkCreationMenu());
   } else if (store.filter === 0) {
@@ -182,6 +182,7 @@ const handleAddBookmarkBtn = () => {
     event.preventDefault();
     store.toggleAdding();
     render();
+    handleCreateBookmark();
   });
 };
 
@@ -207,9 +208,9 @@ $.fn.extend({
 const handleCreateBookmark = function () {
   $("#createBookmark").on("submit", (event) => {
     event.preventDefault();
-
+    debugger
     let serializedParams = $("#createBookmark").serializeJson();
-    // console.log(serializedParams);
+    console.log(serializedParams);
     // debugger;
     api
       .postBookmark(serializedParams)
