@@ -4,6 +4,27 @@ import api from "./api";
 
 // ######################## Page Generation ########################
 
+// const generateBtnbar = () => {
+//   return `
+//   <div class="btnBarParent">
+//       <form id="btnBar">
+//         <input type="button" id="addBookmarkBtn" class="bouncy" value="Add New Bookmark">
+//         <label for='filter'>Filter:
+//         <select id="filter" name="filter">
+//           <option value="">All</option>
+//           <option value="1">1 Star</option>
+//           <option value="2">2 Star</option>
+//           <option value="3">3 Star</option>
+//           <option value="4">4 Star</option>
+//           <option value="5">5 Star</option>
+//         </select>
+//       </form>
+//     </div>
+//     <div id="createBMDiv"></div>
+//     <ul id="myBookmarks"></ul>
+//   `
+// }
+
 const generateBookmarkTemplate = (bookmark) => {
   // console.log("oh hey, generateBookmarkTemplate is working...");
   return `
@@ -159,18 +180,18 @@ const render = function () {
   // console.log(bmList);
   // debugger
   if (store.adding === true) {
-    $("#createBMDiv").html(generateBookmarkCreationMenu());
+    $("#mainPage").html(generateBookmarkCreationMenu());
   } else if (store.filter === 0) {
-    $("#createBMDiv").empty();
+    $("#mainPage").empty();
     const bookmarkString = generateBookmarkString(bmList);
     // console.log("oh hey" + bookmarkString);
     // debugger
-    $("#myBookmarks").html(bookmarkString);
+    $("#mainPage").html(bookmarkString);
   } else {
     const bookmarkString = generateFilteredBookmarkString(bmList);
     // console.log("oh hey it Expanded" + bookmarkString);
     // debugger
-    $("#myBookmarks").html(bookmarkString);
+    $("#mainPage").html(bookmarkString);
   }
 };
 
@@ -205,7 +226,7 @@ $.fn.extend({
 });
 
 const handleCreateBookmark = function () {
-  $("#mainPage").on("click", "#submitBtn", (event) => {
+  $("#createBookmark").on("submit", (event) => {
     event.preventDefault();
 
     let serializedParams = $("#createBookmark").serializeJson();

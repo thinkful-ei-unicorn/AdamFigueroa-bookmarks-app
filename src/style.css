@@ -41,11 +41,8 @@ h2 {
 .btnBarParent {
 min-width: 100%;
 display: flex;
-background-color: #666B6A;
 margin-top: 20px;
-border: solid 1px black;
 border-radius: 10px;
-box-shadow: 2px 2px 8px #000000;
 }
 
 #btnBar {
@@ -84,6 +81,10 @@ box-shadow: 2px 2px 8px #000000;
 #createBookmark {
     display: flex;
     flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px #000000;
+    margin-top: 15px;
     padding: 10px;
 }
 
